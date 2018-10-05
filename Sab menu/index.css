@@ -1,0 +1,274 @@
+* {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-family: "Open Sans", "Rounded Mplus 1c", "Kokoro", 'Noto Sans Japanese', "Yu Gothic", "Meiryo UI", sans-serif;
+	font-weight: 300;
+}
+
+#bg {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background: url(./img/d45c9a196bf9fafaeb3234b7bec8897c_t.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+#load {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: black;
+	text-shadow: 0 0 10px white;
+
+	font-size: 10vw;
+	color: white;
+	text-align: center;
+	z-index: auto;
+}
+
+#load.true {
+	width: 100%;
+	transition-duration: 500ms;
+	z-index: 3;
+}
+
+@keyframes tp {
+	from {
+		width: 0vw;
+	}
+
+	to {
+		width: 100vw
+	}
+}
+
+
+#top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 7vh;
+	background: rgba(16, 87, 121, 1);
+	border-bottom: solid 2px white;
+	z-index: 2;
+
+	animation-name: tp;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 1;
+	animation-duration: 500ms;
+	animation-fill-mode: forwards;
+	/*animation-direction:normal;*/
+}
+
+#back {
+	position: absolute;
+	color: white;
+	font-size: 6vh;
+	left: 1vw;
+	width: 4em;
+	cursor: pointer;
+	text-align: center;
+}
+
+#back:hover {
+	box-shadow: 3px 0 15px 1px white, -3px 0 15px 1px white;
+	text-shadow: 0 0 10px white;
+}
+
+@keyframes tlt {
+	from {
+		left: -20vh;
+	}
+
+	to {
+		left: 100vw;
+	}
+}
+
+#tlight {
+	position: absolute;
+	top: -5vh;
+	left: -20vh;
+	width: 17vh;
+	height: 17vh;
+	background: radial-gradient(circle closest-side, rgba(50, 200, 250, 1), rgba(16, 87, 121, 1));
+
+	animation-name: tlt;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-delay: 1s;
+}
+
+#menu {
+	position: absolute;
+	top: 0;
+	right: 1vw;
+	height: inherit;
+	width: 3em;
+
+	font-size: 6vh;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+#menu:hover {
+	box-shadow: 3px 0 15px 1px white, -3px 0 15px 1px white;
+	text-shadow: 0 0 10px white;
+}
+
+#menus {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 100%;
+
+	background: url(./img/nc119332.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left center;
+	transition: all 500ms ease-out;
+}
+
+#menus.true {
+	width: 100vw;
+}
+
+#menus.false {
+	width: 0;
+}
+
+#left {
+	position: absolute;
+	top: 7vh;
+	left: 0;
+	width: 100vw;
+	height: 93vh;
+	transition: all 350ms ease-out;
+}
+
+#level {
+	top: 0;
+	left: 0;
+	width: unset;
+	height: inherit;
+	margin-right: -16px;
+	overflow-y: scroll;
+}
+
+#level li {
+	margin-left: 1em;
+	cursor: pointer;
+	font-size: 5vh;
+
+	border-radius: 5px;
+	/* CSS3草案 */
+	-webkit-border-radius: 5px;
+	/* Safari,Google Chrome用 */
+	-moz-border-radius: 5px;
+	/* Firefox用 */
+}
+
+#level li:hover {
+	background: linear-gradient(90deg, rgba(16, 87, 121, .9), rgba(16, 87, 121, .1));
+	text-shadow: 0 0 10px white;
+	color: white;
+}
+
+#right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	background: url(./img/nc119332.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left center;
+	
+	transition-property: all;
+	transition-duration: 350ms;
+	transition-timing-function: ease-out;
+}
+
+#right.true {
+	width: 30vw;
+}
+
+#right.false {
+	width: 0vw;
+}
+
+#right_info {
+	position: absolute;
+	top: 1.5vh;
+	left: 1.5vh;
+	height: calc(100% - 5% - 5% - 5% - 1vh);
+	width: calc(100% - 1vh);
+
+	font-size: 3vh;
+	color: white;
+	text-shadow: 0 0 10px white;
+
+	/*background-color: rgba(255, 255, 255, .3);*/
+}
+
+#right_info_hidden {
+	opacity: 0;
+}
+
+.right-button {
+	font-size: 3.5vh;
+	text-align: center;
+
+	border-radius: 5px;
+	/* CSS3草案 */
+	-webkit-border-radius: 5px;
+	/* Safari,Google Chrome用 */
+	-moz-border-radius: 5px;
+	/* Firefox用 */
+
+	cursor: pointer;
+	border: solid 2px white;
+}
+
+#right-close {
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	width: 40%;
+	height: 5%;
+	background: white;
+}
+
+#right-close:hover {
+	background: rgba(16, 87, 121, 1);
+	box-shadow: 3px 0 5px 1px white, -3px 0 5px 1px white;
+	text-shadow: 0 0 10px white;
+	color: white;
+}
+
+#start {
+	position: absolute;
+	bottom: 5%;
+	left: 10%;
+	width: 40%;
+	height: 5%;
+	background: white;
+}
+
+#start:hover {
+	background: rgba(16, 87, 121, 1);
+	box-shadow: 3px 0 5px 1px white, -3px 0 5px 1px white;
+	text-shadow: 0 0 10px white;
+	color: white;
+}

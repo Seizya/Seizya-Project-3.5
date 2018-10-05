@@ -1,0 +1,146 @@
+@keyframes sth {
+    90% {
+        top: 2vmin;
+    }
+
+    to {
+        top: 2vmin;
+        width: 100vw;
+        background: url(./img/nc9416.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left center;
+        color: white;
+        /*box-shadow: 0 5px 10px white, 0 1px 6px -1px white;*/
+        text-shadow: 0 0 10px white;
+        text-align: right;
+    }
+}
+
+@keyframes sto {
+    from {
+        top: 2vmin;
+        width: 100vw;
+        background: url(./img/nc9416.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: left center;
+        color: white;
+        box-shadow: 0 5px 10px white, 0 1px 6px -1px white;
+        text-shadow: 0 0 10px white;
+        text-align: right;
+    }
+
+    to {
+        top: calc(100vh - 10vmin - 10vmin);
+        width: 5.5em;
+        background: white;
+        border: solid 2px black;
+        color: black;
+        text-align: left;
+    }
+}
+
+#start {
+    position: absolute;
+    top: calc(100vh - 10vmin - 10vmin);
+    right: 0;
+    width: 5.5em;
+    height: 10vmin;
+    color: black;
+    background: rgba(255, 255, 255, .6);
+    font-size: calc(9vmin - 4px);
+    cursor: pointer;
+    border: solid 2px black;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    text-shadow: 0 0 10px white;
+}
+
+#start.hover {
+    animation-name: sth;
+    animation-delay: 0;
+    animation-duration: 600ms;
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
+
+#start.out {
+    animation-name: sto;
+    animation-delay: 250ms;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+}
+
+#start:hover {
+    background: linear-gradient(90deg, rgba(16, 87, 121, 1), rgba(16, 87, 121, .3));
+    color: white;
+    transition-timing-function: ease-out;
+}
+
+#starts {
+    position: absolute;
+    top: calc(10vmin - 2px);
+    right: 0;
+    width: 100vw;
+    height: 0;
+    overflow: hidden;
+    transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: auto;
+    color: white;
+    text-align: left;
+    background: url(./img/nc119332.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+#starts.hover {
+    height: calc(100vh - 2vmin - 10vmin - 2vmin);
+    background: url(./img/nc119332.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 650ms;
+    z-index: 2;
+}
+
+#st-contents {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    list-style: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    text-shadow: 0 0 15px white;
+}
+
+#st-contents li {
+    margin: 0;
+    margin-left: .5em;
+    margin-top: .25em;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+#st-contents li:hover {
+    background: linear-gradient(90deg, rgba(16, 87, 121, .9), rgba(16, 87, 121, .1));
+    box-shadow: 0 0 5px white;
+    text-shadow: 0 0 10px white;
+    color: white;
+}

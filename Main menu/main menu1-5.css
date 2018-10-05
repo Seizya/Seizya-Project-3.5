@@ -1,0 +1,185 @@
+#smbg {
+    background-image: url('./img/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    position: absolute;
+    overflow: hidden;
+    top: 23vmin;
+    left: 50vmin;
+    width: calc(100vw - 50vmin);
+    height: 54vmin;
+    border: solid 3px rgba(103, 166, 238, .8);
+
+    border-radius: 5px;
+    /* CSS3草案 */
+    -webkit-border-radius: 5px;
+    /* Safari,Google Chrome用 */
+    -moz-border-radius: 5px;
+    /* Firefox用 */
+
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+
+    box-shadow: -5px 0 10px 5px rgba(255, 255, 255, .5), 0 5px 10px 5px rgba(255, 255, 255, .5), 0 -5px 10px 5px rgba(255, 255, 255, .5);
+}
+
+/*
+#smbg:hover {
+    background: rgba(16,87,121,.8);
+    box-shadow: 0 5px 10px white, 0 1px 6px -1px white;
+    }*/
+
+#smbg2 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+}
+
+#smbg2.on {
+    background-image: url('./img/smbg3.png');
+}
+
+@keyframes gea {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#gear1 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    position: absolute;
+    opacity: 0.7;
+    top: -10vmin;
+    left: 54vmin;
+    width: calc(54vmin * 0.8);
+    height: 80%;
+    animation-name: gea;
+    animation-duration: 180s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+#gear1.on {
+    background-image: url('./img/geares/0.png');
+}
+
+#gear2 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    position: absolute;
+    opacity: 0.7;
+    top: 0vmin;
+    left: calc(54vmin - 54vmin * 0.5 + 1vmin);
+    width: calc(54vmin * 0.5);
+    height: 50%;
+    animation-name: gea;
+    animation-duration: 170s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+#gear2.on {
+    background-image: url('./img/geares/2.png');
+}
+
+#gear3 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    position: absolute;
+    opacity: 0.7;
+    top: 0vmin;
+    left: calc(-54vmin * 0.5);
+    width: calc(54vmin * 1.1);
+    height: 110%;
+    animation-name: gea;
+    animation-duration: 270s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+#gear3.on {
+    background-image: url('./img/geares/16.png');
+}
+
+#gear4 {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    position: absolute;
+    opacity: 0.7;
+    top: -8vmin;
+    left: 18vmin;
+    width: calc(54vmin * 0.3);
+    height: 30%;
+    animation-name: gea;
+    animation-duration: 100s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+#gear4.on {
+    background-image: url('./img/geares/18.png');
+}
+
+#mbg {
+    background-image: url('./img/Han/mbg8.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 2px center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+}
+
+@keyframes foxasct {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#foxa {
+    background-image: url('./img/foxs.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 2px center;
+    position: absolute;
+    top: 2px;
+    left: 60vmin;
+    width: calc(54vmin/4);
+    height: calc(54vmin/4);
+    opacity: 0.5;
+    animation-name: foxasct;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}

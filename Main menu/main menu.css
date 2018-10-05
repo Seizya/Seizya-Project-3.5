@@ -1,0 +1,122 @@
+﻿#bg {
+    background-image: url('./img/bgc.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    /* opacity: 0.9; */
+}
+
+body {
+    color: #222;
+    font-family: "Open Sans", "Rounded Mplus 1c", "Kokoro", 'Noto Sans Japanese', "Yu Gothic", "Meiryo UI", sans-serif;
+    font-weight: 300;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    transition: all 180ms ease-in-out;
+}
+
+#line-x {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 50vmin;
+    border-bottom: solid 2px white;
+}
+
+#line-y {
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 50vmin;
+    height: 100vh;
+    border-right: solid 2px white;
+}
+
+@keyframes sct {
+    from {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(90deg);
+    }
+    90% {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(700deg);
+    }
+}
+
+#circle {
+    background-image: url('./img/smg/smg11.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vmin;
+    height: 100vmin;
+    opacity: 1;
+}
+
+#circle.circle-rotation {
+    animation-name: sct;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+#circle2 {
+    background-image: url('./img/smg/smg10.png');
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vmin;
+    height: 100vmin;
+}
+
+#circle2.circle-rotation {
+    animation-name: sct;
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+
+#circle3 {
+    opacity: 0.5;
+    background-image: url('./img/smg/SW12-3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vmin;
+    height: 100vmin;
+}
+
+#circle3.circle-rotation {
+    animation-name: sct;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
