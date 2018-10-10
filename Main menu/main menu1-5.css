@@ -144,7 +144,7 @@
 }
 
 #mbg {
-    background-image: url('./img/Han/mbg8.png');
+    background-image: url('./img/Han/mbg10.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 2px center;
@@ -172,7 +172,7 @@
     background-position: 2px center;
     position: absolute;
     top: 2px;
-    left: 60vmin;
+    left: 40vmin;
     width: calc(54vmin/4);
     height: calc(54vmin/4);
     opacity: 0.5;
