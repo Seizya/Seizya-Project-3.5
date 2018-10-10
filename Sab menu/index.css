@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	font-family: "Open Sans", "Rounded Mplus 1c", "Kokoro", 'Noto Sans Japanese', "Yu Gothic", "Meiryo UI", sans-serif;
+	font-family: /*"うずらフォント",/*"Segoe Script",*/ "Open Sans", "Rounded Mplus 1c", "Kokoro", 'Noto Sans Japanese', "Yu Gothic", "Meiryo UI", sans-serif;
 	font-weight: 300;
 }
 
@@ -16,6 +16,37 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
+}
+
+#slide_chara {
+	position: absolute;
+	top: 40vh;
+	right: -20vh;
+	height: 20vh;
+	width: 20vh;
+
+	background-image: url(./img/chara/1.png);
+
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+}
+
+#slide_chara.true {
+	animation-name: slide;
+}
+
+@keyframes slide {
+	to {
+		right: calc(100vw + 20vh);
+	}
+}
+
+#slide_chara.false {
+	right: -20vh;
 }
 
 #load {
@@ -170,6 +201,7 @@
 	margin-left: 1em;
 	cursor: pointer;
 	font-size: 5vh;
+	width: 100vw;
 
 	border-radius: 5px;
 	/* CSS3草案 */
@@ -183,6 +215,7 @@
 	background: linear-gradient(90deg, rgba(16, 87, 121, .9), rgba(16, 87, 121, .1));
 	text-shadow: 0 0 10px white;
 	color: white;
+	box-shadow: 0 0 5px 1px black;
 }
 
 #right {
@@ -194,7 +227,7 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: left center;
-	
+
 	transition-property: all;
 	transition-duration: 350ms;
 	transition-timing-function: ease-out;
@@ -227,7 +260,13 @@
 }
 
 .right-button {
-	font-size: 3.5vh;
+	position: absolute;
+	width: 40%;
+	bottom: 5%;
+	height: 5%;
+	background-color: white;
+
+	font-size: 4ex;
 	text-align: center;
 
 	border-radius: 5px;
@@ -238,37 +277,38 @@
 	/* Firefox用 */
 
 	cursor: pointer;
-	border: solid 2px white;
+	/*border: solid 2px white;*/
+	transition-duration: 100ms;
+	transition-timing-function: ease-in;
+	
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+}
+
+.right-button:hover {
+	background-color: rgba(16, 87, 121, 1);
+	box-shadow: 0 0 10px 5px white;
+	/*text-shadow: 0 0 10px white;
+	color: white;*/
 }
 
 #right-close {
-	position: absolute;
-	bottom: 5%;
 	right: 5%;
-	width: 40%;
-	height: 5%;
-	background: white;
+
+	background-image: url(./img/Close2.png);
 }
 
-#right-close:hover {
-	background: rgba(16, 87, 121, 1);
-	box-shadow: 3px 0 5px 1px white, -3px 0 5px 1px white;
-	text-shadow: 0 0 10px white;
-	color: white;
+#right-close:hover{
+	background-image: url(./img/Close_light2.png);
 }
 
 #start {
-	position: absolute;
-	bottom: 5%;
 	left: 10%;
-	width: 40%;
-	height: 5%;
-	background: white;
+
+	background-image: url(./img/Start2.png);
 }
 
-#start:hover {
-	background: rgba(16, 87, 121, 1);
-	box-shadow: 3px 0 5px 1px white, -3px 0 5px 1px white;
-	text-shadow: 0 0 10px white;
-	color: white;
+#start:hover{
+	background-image: url(./img/Start_light2.png);
 }
