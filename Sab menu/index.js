@@ -25,6 +25,10 @@ document.getElementById('area3').addEventListener('click', () => {
 })
 
 var area_before;
+var RBheight = CSS(".right-button")["height"][0];
+var RBbottom = CSS(".right-button")["bottom"][0];
+CSS(".right-button")["bottom"] = parseFloat(CSS(".right-button")["bottom"]) + parseFloat(CSS(".right-button")["height"]) * .5 + "px";
+CSS(".right-button")["height"] = "0";
 
 function starts(link, area) {
 	if (area != area_before) {
@@ -38,6 +42,11 @@ function starts(link, area) {
 	}
 
 	function startson(TFa) {
+		setTimeout(function () {
+			CSS(".right-button")["height"] = RBheight;
+			CSS(".right-button")["bottom"] = RBbottom;
+		}, getCSS("right", "transition-duration") + (TFa == "true" ? getCSS("right", "transition-duration") * 2 + getCSS("right", "transition-delay") : 0))
+
 		setTimeout(function () {
 			document.getElementById("right_info").style.whiteSpace = "nowrap";
 
@@ -63,11 +72,12 @@ function starts(link, area) {
 }
 
 function right_close() {
-	CSS("#right")["transition-delay"] = CSS(".right-button")["transition-duration"][0];
+	CSS("#right")["transition-delay"] = parseFloat(CSS(".right-button")["transition-duration"][0]) * 2 + "s";
 	//console.log(CSS("#right")["transition-delay"]);
 
-	var RBheight = CSS(".right-button")["height"][0];
+	CSS(".right-button")["bottom"] = parseFloat(CSS(".right-button")["bottom"]) + parseFloat(CSS(".right-button")["height"]) * .5 + "px";
 	CSS(".right-button")["height"] = "0";
+	//console.log(CSS(".right-button")["bottom"])
 
 	document.getElementById("right_info").style.whiteSpace = "nowrap";
 	document.getElementById('right').className = "false";
@@ -75,7 +85,6 @@ function right_close() {
 	setTimeout(function () {
 		CSS("#right")["transition-delay"] = "0s";
 		//console.log(CSS("#right")["transition-delay"])
-		CSS(".right-button")["height"] = RBheight;
 	}, getCSS("right", "transition-duration") + getCSS("right", "transition-delay"));
 }
 
