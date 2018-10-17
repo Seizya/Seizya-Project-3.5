@@ -1,13 +1,14 @@
 //document.getElementById('level').scrollTop = document.getElementById('level').scrollHeight;
-var of = false;
+//menus--------------------------------------------------------------------------------------------
 var ofa = false;
-var link;
 
 document.getElementById('menu').addEventListener('click', () => {
 	ofa = !ofa;
 	document.getElementById('menus').className = String(ofa);
+	right_close();
 })
 
+//right-info---------------------------------------------------------------------------------------
 document.getElementById('right-close').addEventListener('click', () => {
 	right_close();
 })
@@ -25,27 +26,25 @@ document.getElementById('area3').addEventListener('click', () => {
 })
 
 var area_before;
-var RBheight = CSS(".right-button")["height"][0];
-var RBbottom = CSS(".right-button")["bottom"][0];
+var RBheight = (parseFloat(CSS(".right-button")["height"][0]) / parseFloat(CSS("#right")["height"])) * 100 + "%";
+var RBbottom = (parseFloat(CSS(".right-button")["bottom"][0]) / parseFloat(CSS("#right")["height"])) * 100 + "%";
 CSS(".right-button")["bottom"] = parseFloat(CSS(".right-button")["bottom"]) + parseFloat(CSS(".right-button")["height"]) * .5 + "px";
 CSS(".right-button")["height"] = "0";
 
 function starts(link, area) {
-	if (area != area_before) {
-		if (document.getElementById("right").className == "true") {
-			right_close();
-			startson("true");
-		} else {
-			startson();
-		}
-		area_before = area;
+	if (document.getElementById("right").className == "true" && area != area_before) {
+		right_close();
+		startson("true");
+	} else {
+		startson();
 	}
+	area_before = area;
 
 	function startson(TFa) {
 		setTimeout(function () {
 			CSS(".right-button")["height"] = RBheight;
 			CSS(".right-button")["bottom"] = RBbottom;
-		}, getCSS("right", "transition-duration") + (TFa == "true" ? getCSS("right", "transition-duration") * 2 + getCSS("right", "transition-delay") : 0))
+		}, getCSS("right", "transition-duration") + (TFa == "true" ? getCSS("right", "transition-duration") * 2 /*+ getCSS("right", "transition-delay")*/ : 0))
 
 		setTimeout(function () {
 			document.getElementById("right_info").style.whiteSpace = "nowrap";
