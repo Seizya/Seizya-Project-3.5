@@ -9,22 +9,6 @@ document.getElementById('menu').addEventListener('click', () => {
 })
 
 //right-info---------------------------------------------------------------------------------------
-document.getElementById('right-close').addEventListener('click', () => {
-	right_close();
-})
-
-document.getElementById('area1').addEventListener('click', () => {
-	starts("../Brain God/index.html", 1);
-})
-
-document.getElementById('area2').addEventListener('click', () => {
-	starts("../Brain G/index.html", 2);
-})
-
-document.getElementById('area3').addEventListener('click', () => {
-	starts("../Brain Good/index.html", 3);
-})
-
 var area_before;
 var RBheight = (parseFloat(CSS(".right-button")["height"][0]) / parseFloat(CSS("#right")["height"])) * 100 + "%";
 var RBbottom = (parseFloat(CSS(".right-button")["bottom"][0]) / parseFloat(CSS("#right")["height"])) * 100 + "%";
