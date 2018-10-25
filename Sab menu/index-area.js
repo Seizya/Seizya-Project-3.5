@@ -1,4 +1,4 @@
-document.getElementById('right-close').addEventListener('click', () => {
+﻿document.getElementById('right-close').addEventListener('click', () => {
     right_close();
 })
 
@@ -22,8 +22,13 @@ var area_menuTF = [false, undefined];
 
 function area_menu(area_number) {
     if (area_menuTF[0]) {
-        CSS("#area_menu" + area_menuTF[1])["height"] = 0;
-        setTimeout(level_scroll(area_number), parseFloat(CSS("#level ul")["transition-duration"])*1000);
+        if (area_menuTF[1] != area_number) {
+            area_menu_false();
+            setTimeout(() => level_scroll(area_number), parseFloat(CSS("#level ul")["transition-duration"]) * 1000);
+        } else {
+            area_menuTF[0] = false;
+            area_menu_false();
+        }
     } else {
         level_scroll(area_number);
     }
@@ -31,11 +36,28 @@ function area_menu(area_number) {
 }
 
 function area_menu_true(area_number) {
-    CSS("#area_menu" + area_number)["height"] =
-        "calc(" + parseFloat(CSS("#level li")["height"][0]) * (
-            document.getElementById("area_menu" + area_number).getElementsByTagName("li").length) + "px + 3vh)";
-    console.log("Aa")
+    CSS("#area_menu" + area_number)["height"] = "calc(" +
+        parseFloat(CSS("#level li")["height"][0]) *
+        (document.getElementById("area_menu" + area_number).getElementsByTagName("li").length) /
+        parseFloat(giveCSS("bg").height) * 100 + "vh + " +
+        482 * (getCSS("bg", "width") - parseFloat(CSS("#level ul")["font-size"][0])) / 480 * 9 / 482 + "px)";
+    //console.log("Aa")
+
     area_menuTF[0] = true;
+    document.getElementById("area" + area_number).style.background = "url(./img/nc9417.png)";
+    document.getElementById("area" + area_number).style.color = "white";
+    document.getElementById("area" + area_number).style.border = "solid 2px black";
+    document.getElementById("area" + area_number).style.textShadow = " 0 0 10px black";
+    //document.getElementById("bg").style.opacity = .7;
+}
+
+function area_menu_false() {
+    CSS("#area_menu" + area_menuTF[1])["height"] = 0;
+    document.getElementById("area" + area_menuTF[1]).style.background = "";
+    document.getElementById("area" + area_menuTF[1]).style.color = "";
+    document.getElementById("area" + area_menuTF[1]).style.border = "";
+    document.getElementById("area" + area_menuTF[1]).style.textShadow = "";
+    //document.getElementById("bg").style.opacity = 1;
 }
 
 function level_scroll(area_number) {

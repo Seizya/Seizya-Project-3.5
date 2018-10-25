@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Seizya-Project ver.4</title>
+    <script src="./index.js"></script>
     <script src="./right_info.js"></script>
     <style>
         @import "./index.css";
@@ -14,6 +15,7 @@
     <div id="bg">
         <div id="slide_chara" class="true"></div>
     </div>
+    <div id="top_back"></div>
     <div id="top">
         <div id="tlight"></div>
         <div id="menu">Menu</div>
@@ -69,7 +71,21 @@
             <div id="right-close" class="right-button" type="button"></div>
             <div id="start" class="right-button" type="button"></div>
         </div>
-        <div id="menus"></div>
+
+        <div id="menus" class="menu-style">
+            <ul id="menus-contents" class="menus-contents-style">
+                <li id="menus-close">→ Close the Menu</li>
+                <li id="chara-button">Charactor</li>
+            </ul>
+        </div>
+        
+        <div id="chara-menus" class="menu-style">
+            <ul id="chara-menus-contents" class="menus-contents-style">
+                <li id="chara-menus-close">← Back / Main Menu</li>
+                <li id="chara-true">Scroll ON</li>
+                <li id="chara-false">Scroll OFF</li>
+            </ul>
+        </div>
     </div>
     <div id="load" class="false">Now Loading...</div>
     <style>
@@ -79,7 +95,8 @@
         @import url('https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css');
         @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
     </style>
-    <script src="./index.js"></script>
-    <script src="./chara.js"></script>
+    <script src="./index-2.js"></script>
+    <script src="./index-menu.js"></script>
     <script src="./index-area.js"></script>
+    <script src="./chara.js"></script>
 </body>

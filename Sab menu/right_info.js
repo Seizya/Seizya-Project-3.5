@@ -1,3 +1,66 @@
+//right-info---------------------------------------------------------------------------------------
+var area_before;
+var RBheight = (parseFloat(CSS(".right-button")["height"][0]) / parseFloat(CSS("#right")["height"])) * 100 + "%";
+var RBbottom = (parseFloat(CSS(".right-button")["bottom"][0]) / parseFloat(CSS("#right")["height"])) * 100 + "%";
+CSS(".right-button")["bottom"] = parseFloat(CSS(".right-button")["bottom"]) + parseFloat(CSS(".right-button")["height"]) * .5 + "px";
+CSS(".right-button")["height"] = "0";
+
+function starts(link, area) {
+	if (document.getElementById("right").className == "true" && area != area_before) {
+		right_close();
+		startson("true");
+	} else {
+		startson();
+	}
+	area_before = area;
+
+	function startson(TFa) {
+		setTimeout(function () {
+			CSS(".right-button")["height"] = RBheight;
+			CSS(".right-button")["bottom"] = RBbottom;
+		}, right_transition("duration") + (TFa == "true" ? right_transition("duration") * 2 /*+ getCSS("right", "transition-delay")*/ : 0))
+
+		setTimeout(function () {
+			document.getElementById("right_info").style.whiteSpace = "nowrap";
+
+			document.getElementById("right_info").innerHTML =
+				document.getElementById("area" + (area) + "_").innerHTML;
+
+			document.getElementById('right').className = "true";
+			setTimeout(() => {
+				document.getElementById("right_info").style.whiteSpace = "normal";
+			}, right_transition("duration"))
+
+
+			document.getElementById('start').addEventListener('click', () => {
+				document.getElementById('load').className = "true";
+				setTimeout(() => {
+					document.location.href = link;
+					/*document.getElementById('load').className = "false";
+					document.getElementById('right').className = "false";*/
+				}, 3000)
+			})
+		}, TFa == "true" ? right_transition("delay") + right_transition("duration") + 200 : 0)
+	}
+}
+
+function right_close() {
+	CSS("#right")["transition-delay"] = parseFloat(CSS(".right-button")["transition-duration"][0]) * 2 + "s";
+	//console.log(CSS("#right")["transition-delay"]);
+
+	CSS(".right-button")["bottom"] = parseFloat(CSS(".right-button")["bottom"]) + parseFloat(CSS(".right-button")["height"]) * .5 + "px";
+	CSS(".right-button")["height"] = "0";
+	//console.log(CSS(".right-button")["bottom"])
+
+	document.getElementById("right_info").style.whiteSpace = "nowrap";
+	document.getElementById('right').className = "false";
+
+	setTimeout(function () {
+		CSS("#right")["transition-delay"] = "0s";
+		//console.log(CSS("#right")["transition-delay"])
+	}, right_transition("duration") + right_transition("delay"));
+}
+
 window.addEventListener("load", () => importHTMLs());
 
 function importHTMLs() {
