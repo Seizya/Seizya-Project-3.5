@@ -1,38 +1,27 @@
-﻿document.getElementById('right-close').addEventListener('click', () => {
-    right_close();
-})
+﻿document.getElementById('area1').addEventListener('click', () => area_menu(1))
 
-document.getElementById('area1').addEventListener('click', () => {
-    area_menu(1);
-    // starts("../Brain God/index.html", 1);
-})
+document.getElementById('area2').addEventListener('click', () => area_menu(2))
 
-document.getElementById('area2').addEventListener('click', () => {
-    area_menu(2);
-    // starts("../Brain G/index.html", 2);
-})
-
-document.getElementById('area3').addEventListener('click', () => {
-    area_menu(3);
-    // starts("../Brain Good/index.html", 3);
-})
+document.getElementById('area3').addEventListener('click', () => area_menu(3))
 
 var area_menuTF = [false, undefined];
 //CSS("#level ul")["height"] = "0";
 
 function area_menu(area_number) {
-    if (area_menuTF[0]) {
-        if (area_menuTF[1] != area_number) {
-            area_menu_false();
-            setTimeout(() => level_scroll(area_number), parseFloat(CSS("#level ul")["transition-duration"]) * 1000);
+    if (area_number <= 3) {
+        right_close();
+        if (area_menuTF[0]) {
+            if (area_menuTF[1] != area_number) {
+                area_menu_false();
+                setTimeout(() => level_scroll(area_number), parseFloat(CSS("#level ul")["transition-duration"]) * 1000);
+            } else {
+                area_menuTF[0] = false;
+                area_menu_false();
+            }
         } else {
-            area_menuTF[0] = false;
-            area_menu_false();
+            level_scroll(area_number);
         }
-    } else {
-        level_scroll(area_number);
     }
-    area_menuTF[1] = area_number;
 }
 
 function area_menu_true(area_number) {
@@ -48,16 +37,20 @@ function area_menu_true(area_number) {
     document.getElementById("area" + area_number).style.color = "white";
     document.getElementById("area" + area_number).style.border = "solid 2px black";
     document.getElementById("area" + area_number).style.textShadow = " 0 0 10px black";
-    //document.getElementById("bg").style.opacity = .7;
+    document.getElementById("bg_effect").style.opacity = .8;
+    area_menuTF[1] = area_number;
+
 }
 
 function area_menu_false() {
     CSS("#area_menu" + area_menuTF[1])["height"] = 0;
-    document.getElementById("area" + area_menuTF[1]).style.background = "";
+    setTimeout(() => {
+        document.getElementById("area" + area_menuTF[1]).style.background = "";
+    }, parseFloat(CSS(".menu-style")["transition-duration"][0]) * 1000);
     document.getElementById("area" + area_menuTF[1]).style.color = "";
     document.getElementById("area" + area_menuTF[1]).style.border = "";
     document.getElementById("area" + area_menuTF[1]).style.textShadow = "";
-    //document.getElementById("bg").style.opacity = 1;
+    document.getElementById("bg_effect").style.opacity = 0;
 }
 
 function level_scroll(area_number) {

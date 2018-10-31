@@ -14,10 +14,28 @@
 	left: 0;
 	width: 100vw;
 	height: 100vh;
-	background-image: url(./img/d45c9a196bf9fafaeb3234b7bec8897c_t.jpeg);
+	background: url(./img/bg_more.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
+}
+
+@keyframes first_load {
+	to {
+		top: 100vh;
+	}
+}
+
+#bg_effect {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+
+	background-color: rgba(0, 0, 0, 1);
+	opacity: 0;
+	transition-duration: 300ms;
 }
 
 #slide_chara {
@@ -88,7 +106,7 @@
 	left: 0;
 	height: 0;
 	width: 100vw;
-	background: rgba(16, 87, 121, 1);
+	background:rgba(16, 87, 121, 1);
 	border-bottom: solid 2px white;
 	z-index: 2;
 
@@ -115,7 +133,7 @@
 	top: 0;
 	left: 0;
 	height: 7vh;
-	background: black;
+	background: linear-gradient(to right, #000000 95%, rgba(0, 0, 0, 0));
 	z-index: 2;
 
 	animation-name: tpb;
@@ -196,19 +214,16 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: left center;
+
 	transition: all 500ms;
+	width: 0;
+	transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 	vertical-align: top;
-	overflow-y: scroll;
 }
 
 .menu-style.true {
 	width: calc(100vw + 16px);
 	transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.menu-style.false {
-	width: 0;
-	transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 .menu-style li {
@@ -237,6 +252,42 @@
 	height: 100%;
 	top: 1.5vh;
 	left: 1.5vh;
+}
+
+.operation-menus-contents-style {
+	position: absolute;
+	top: 1.5vh;
+	left: 1.5vh;
+	height: 0;
+	width: calc(100vw + 16px);
+
+	font-size: 5vh;
+	color: white;
+
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.operation-menus-contents-close {
+	cursor: pointer;
+
+	margin-left: .5em;
+	margin-top: .25em;
+
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.operation-menus-contents-close:hover {
+	background: linear-gradient(90deg, rgba(16, 87, 121, .9), rgba(16, 87, 121, .1));
+	text-shadow: 0 0 10px white;
+	box-shadow: 0 0 5px 1px white;
+}
+
+.operation-menus-contents-method-style {
+	margin-left: .5em;
+	margin-top: .25em;
 }
 
 #left {

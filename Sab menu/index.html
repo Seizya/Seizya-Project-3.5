@@ -5,45 +5,49 @@
     <meta charset="utf-8">
     <title>Seizya-Project ver.4</title>
     <script src="./index.js"></script>
-    <script src="./right_info.js"></script>
     <style>
         @import "./index.css";
-    </style>
+        </style>
 </head>
 
 <body>
     <div id="bg">
         <div id="slide_chara" class="true"></div>
+        <div id="bg_effect"></div>
     </div>
+
     <div id="top_back"></div>
     <div id="top">
         <div id="tlight"></div>
         <div id="menu">Menu</div>
         <div id="back" type="button" onclick="document.location.href = '../Main menu/index.html'">
-            ←Back </div>
+            ←Title </div>
     </div>
     <div id="left" class="false">
         <ul id="level">
             <li id="area1">Area.1 | Twice Cat</li>
             <ul id="area_menu1">
-                <li id="stage1_1">Stage.1 | Nothing</li>
-                <li id="stage2_1">Stage.2 | Nothing</li>
-                <li id="stage3_1">Stage.3 | Nothing</li>
-                <li id="stageB_1">Stage.B | Twice Cat</li>
+                <li id="stage0101">Stage.1 | Nothing</li>
+                <li id="stage0201">Stage.2 | Nothing</li>
+                <li id="stage0301">Stage.3 | Nothing</li>
+                <li></li>
+                <li id="stage0B01">Stage.B | Twice Cat</li>
             </ul>
             <li id="area2">Area.2 | Nine Fox</li>
             <ul id="area_menu2">
-                <li id="stage1_2">Stage.1 | Nothing</li>
-                <li id="stage2_2">Stage.2 | Nothing</li>
-                <li id="stage3_2">Stage.3 | Nothing</li>
-                <li id="stageB_2">Stage.B | Nine Fox</li>
+                <li id="stage0102">Stage.1 | Nothing</li>
+                <li id="stage0202">Stage.2 | Nothing</li>
+                <li id="stage0302">Stage.3 | Nothing</li>
+                <li></li>
+                <li id="stage0B02">Stage.B | Nine Fox</li>
             </ul>
             <li id="area3">Area.3 | Purple Wise</li>
             <ul id="area_menu3">
-                <li id="stage1_3">Stage.1 | Nothing</li>
-                <li id="stage2_3">Stage.2 | Nothing</li>
-                <li id="stage3_3">Stage.3 | Nothing</li>
-                <li id="stageB_3">Stage.B | Purple Wise</li>
+                <li id="stage0103">Stage.1 | Nothing</li>
+                <li id="stage0203">Stage.2 | Nothing</li>
+                <li id="stage0303">Stage.3 | Nothing</li>
+                <li></li>
+                <li id="stage0B03">Stage.B | Purple Wise</li>
             </ul>
             <li></li>
             <li>Lorem, ipsum.</li>
@@ -71,20 +75,31 @@
             <div id="right-close" class="right-button" type="button"></div>
             <div id="start" class="right-button" type="button"></div>
         </div>
-
+        <!-- menus--------------------------------------------------------------------------------------- -->
         <div id="menus" class="menu-style">
             <ul id="menus-contents" class="menus-contents-style">
                 <li id="menus-close">→ Close the Menu</li>
                 <li id="chara-button">Charactor</li>
+                <li id="operation-button">Operation method //操作方法</li>
             </ul>
         </div>
-        
+
         <div id="chara-menus" class="menu-style">
             <ul id="chara-menus-contents" class="menus-contents-style">
-                <li id="chara-menus-close">← Back / Main Menu</li>
+                <li id="chara-menus-close">→ Back / Main Menu</li>
                 <li id="chara-true">Scroll ON</li>
                 <li id="chara-false">Scroll OFF</li>
             </ul>
+        </div>
+
+        <div id="operation-menus" class="menu-style">
+            <ul id="operation-menus-contents" class="menus-contents-style">
+                <li id="operation-menus-close">→ Back / Main Menu</li>
+                <li id="operation-extra">Extra</li>
+                <li id="operation-standard">Standard</li>
+                <li id="operation-hard">Hard</li>
+            </ul>
+            <import src="./operation_method.html" />
         </div>
     </div>
     <div id="load" class="false">Now Loading...</div>
@@ -95,8 +110,9 @@
         @import url('https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css');
         @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
     </style>
+    <script src="./right_info.js"></script>
     <script src="./index-2.js"></script>
-    <script src="./index-menu.js"></script>
     <script src="./index-area.js"></script>
     <script src="./chara.js"></script>
+    <script src="./index-menu.js"></script>
 </body>

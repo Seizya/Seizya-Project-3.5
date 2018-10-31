@@ -1,3 +1,8 @@
+//right-info-area----------------------------------------------------------------------------------
+document.getElementById('right-close').addEventListener('click', () => right_close())
+document.getElementById("stage0B01").addEventListener('click', () => starts("../Brain God/index.html", "0B01"));
+document.getElementById("stage0B02").addEventListener('click', () => starts("../Brain G/index.html", "0B02"));
+document.getElementById("stage0B03").addEventListener('click', () => starts("../Brain Good/index.html", "0B03"));
 //right-info---------------------------------------------------------------------------------------
 var area_before;
 var RBheight = (parseFloat(CSS(".right-button")["height"][0]) / parseFloat(CSS("#right")["height"])) * 100 + "%";
@@ -24,7 +29,7 @@ function starts(link, area) {
 			document.getElementById("right_info").style.whiteSpace = "nowrap";
 
 			document.getElementById("right_info").innerHTML =
-				document.getElementById("area" + (area) + "_").innerHTML;
+				document.getElementById("stage" + (area) + "_").innerHTML;
 
 			document.getElementById('right').className = "true";
 			setTimeout(() => {
@@ -61,25 +66,25 @@ function right_close() {
 	}, right_transition("duration") + right_transition("delay"));
 }
 
-window.addEventListener("load", () => importHTMLs());
+/*window.addEventListener("load", () => importHTMLs());
 
 function importHTMLs() {
-  const warn = (...args) => console.warn("[importHTMLs] ", ...args);
-  Array.from(document.getElementsByTagName("import")).forEach(_ => {
-    const path = _.getAttribute("src");
-    if (!path) {
-      warn("srcに読み込みたいファイルパスが指定されていないimportタグがありました。とりあえず無視しときました。");
-      return;
-    }
-    fetch(path)
-      .then(res => res.text())
-      .then(text => {
-        _.outerHTML = text;
-      }).catch(err => {
-        warn(path + " の読み込みでエラーが起きました。詳細は……", err);
-      });
-  });
-}
+	const warn = (...args) => console.warn("[importHTMLs] ", ...args);
+	Array.from(document.getElementsByTagName("import")).forEach(_ => {
+		const path = _.getAttribute("src");
+		if (!path) {
+			warn("srcに読み込みたいファイルパスが指定されていないimportタグがありました。とりあえず無視しときました。");
+			return;
+		}
+		fetch(path)
+			.then(res => res.text())
+			.then(text => {
+				_.outerHTML = text;
+			}).catch(err => {
+				warn(path + " の読み込みでエラーが起きました。詳細は……", err);
+			});
+	});
+}*/
 /*
 importタグを追加します。
 例えば、<import src="./button.html" /> とすれば、 ./button.html の内容でそのタグが置き換えられます。
