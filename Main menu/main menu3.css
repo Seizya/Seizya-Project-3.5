@@ -81,22 +81,21 @@
 
     box-shadow: -5px 0 5px rgba(255, 255, 255, .5), 0 5px 5px rgba(255, 255, 255, .5), 0 -5px 5px rgba(255, 255, 255, .5);
     text-shadow: 0 0 10px white;
+
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation-duration: 350ms;
 }
 
 #menu.hover {
     animation-name: menu-chs;
-    animation-duration: 350ms;
     animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 }
 
 #menu.out {
     animation-name: menu-cho;
     animation-delay: 350ms;
-    animation-duration: 350ms;
     animation-fill-mode: backwards;
-    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 #menu:hover {
@@ -151,6 +150,7 @@
     color: white;
 
     text-align: left;
+    font-size: 6vmin;
 }
 
 .menus-style.hover {
@@ -163,7 +163,6 @@
     background-position: center bottom;
 
     transition: all 350ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    ;
     transition-delay: 450ms;
     z-index: 1;
 }
@@ -185,6 +184,7 @@
     padding: 0;
 
     text-shadow: 0 0 5px white;
+    font-size: 6vmin;
 }
 
 .menus-contents-style li {

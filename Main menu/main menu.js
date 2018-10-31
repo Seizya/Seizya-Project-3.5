@@ -134,10 +134,11 @@ document.getElementById("music-menu-back").addEventListener('click', () => {
 }, false);
 
 var bgm = new Audio();
-bgm.src = "./music/nc97701.mp3";
+//bgm.src = "./music/nc97701.mp3";
+bgm.src = "./music/armeria.mp3";
 bgm.loop = true;
 bgm.volume = .3;
-//bgm.play();
+bgm.play();
 
 document.getElementById("volume").addEventListener('input', () => {
     bgm.volume = document.getElementById("volume").value;
